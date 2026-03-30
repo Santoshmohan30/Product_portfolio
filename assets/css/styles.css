@@ -230,6 +230,16 @@ a:hover {
   font-size: 1rem;
 }
 
+.experience-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.experience-list li + li {
+  margin-top: 0.8rem;
+}
+
 @media (max-width: 860px) {
   .grid.two-col,
   .steps,
