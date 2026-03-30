@@ -1,0 +1,261 @@
+:root {
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --surface-alt: #eef2f7;
+  --border: #d9e1ea;
+  --text: #17202a;
+  --muted: #52606d;
+  --accent: #0f4c81;
+  --accent-soft: #dce9f6;
+  --shadow: 0 14px 32px rgba(15, 28, 44, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(1040px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.narrow {
+  width: min(760px, 100%);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(247, 248, 251, 0.94);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.hero {
+  padding: 5.5rem 0 3.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3.7rem);
+  line-height: 1.15;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 1.25rem 0 0;
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+.hero-links,
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.hero-links a,
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.72rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font-weight: 600;
+}
+
+.section {
+  padding: 1.5rem 0 3.5rem;
+}
+
+.section-alt {
+  background: linear-gradient(180deg, rgba(220, 233, 246, 0.38), rgba(238, 242, 247, 0.55));
+  border-top: 1px solid rgba(217, 225, 234, 0.8);
+  border-bottom: 1px solid rgba(217, 225, 234, 0.8);
+}
+
+.section h2 {
+  margin: 0 0 1.4rem;
+  font-size: 1.75rem;
+}
+
+.grid.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.card,
+.project-card,
+.step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.card {
+  padding: 1.35rem;
+}
+
+.card h3,
+.step h3,
+.project-header h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tag-list li {
+  padding: 0.55rem 0.75rem;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.step {
+  padding: 1.2rem;
+}
+
+.step p,
+.project-grid p,
+#execution p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.project-card {
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.project-header p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.project-grid h4 {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 860px) {
+  .grid.two-col,
+  .steps,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-header,
+  .nav-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero {
+    padding-top: 4.5rem;
+  }
+
+  .hero-links a,
+  .contact-links a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .site-nav {
+    gap: 0.75rem;
+  }
+}
